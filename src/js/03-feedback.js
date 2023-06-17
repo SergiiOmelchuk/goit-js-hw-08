@@ -48,6 +48,7 @@ function submitForm(event) {
   event.currentTarget.reset();
   const dataObj = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
   localStorage.removeItem(LOCAL_STORAGE_KEY);
+  console.log(formDatas);
 }
 
 function fillTextarea() {
