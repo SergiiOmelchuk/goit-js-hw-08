@@ -49,3 +49,12 @@ function submitForm(event) {
   const dataObj = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
   localStorage.removeItem(LOCAL_STORAGE_KEY);
 }
+
+function fillTextarea() {
+  const savedMess = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  if (savedMess === null) {
+    return;
+  }
+  refs.textarea.value = savedMess['message'] || '';
+  refs.inputEl.value = savedMess['email'] || '';
+}
