@@ -16,19 +16,8 @@ function resumePlay() {
     return;
   }
   const pause = JSON.parse(localStorage.getItem(TIME_KEY))['seconds'];
-  //   console.log(pause);
   if (pause) {
-    player
-      .setCurrentTime(pause)
-      .then(function (seconds) {})
-      .catch(function (error) {
-        switch (error.name) {
-          case 'Error':
-            break;
-          default:
-            break;
-        }
-      });
+    player.setCurrentTime(pause || 0);
   }
 }
 resumePlay();
